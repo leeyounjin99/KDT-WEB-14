@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>설문조사 폼</title>
+    </head>
+    <body>
+        <h1>설문조사</h1>
+        <br />
+        이름<input type="text" />
+        <br />
+        이메일<input type="email" placeholder="abc@naver.com" />
+        <br />
+        <h2>나이</h2>
+        <br />
+        <input type="radio" name="age" value="10대" /> 10대 <input type="radio" name="age" value="20대" /> 20대
+        <input type="radio" name="age" value="30대" /> 30대 <input type="radio" name="age" value="40대" /> 40대
+        <input type="radio" name="age" value="50대" /> 50대 <input type="radio" name="age" value="60대" /> 60대 이상
+        <br />
+        <h2>원하는 강의(복수응답가능합니다.)</h2>
+        <input type="checkbox" name="lecture" value="html" /> html
+        <input type="checkbox" name="lecture" value="javascript" /> javascript
+        <input type="checkbox" name="lecture" value="css" /> css
+        <br />
+        <br />
+        <textarea placeholder="하고싶은 말을 써주세요 :) " cols="100" rows="10"></textarea>
+        <input type="button" value="제출" />
+    </body>
+</html>

@@ -38,5 +38,99 @@
         <em>이탤릭체 + 의미도 강조</em>
         <del>중간줄 (취소선)</del>
         <u>밑줄</u>
+
+        <!-- day2 -->
+        <!-- 상대경로 : 현재 파일의 위치 기준 -->
+        <img src="./dog.png" alt="dog" />
+        <!-- 절대경로 : 서버의 처음 주소부터 접근 -->
+        <!--  PC 상의 절대경로 -->
+
+        <!-- <img src="C:\Users\UserK\Desktop\KDT-WEB-14\01_html\dog.png" alt="dog" /> -->
+        <!-- 라이브 서버 절대 경로 -->
+        <img src="http://127.0.0.1:5500/01_html/dog.png" alt="dog live" />
+        <br />
+        <!-- a 태그 -->
+        <a href="https://www.naver.com">네이버</a>
+        <a href="https://www.naver.com" target="blank">네이버(blank)</a>
+        <a href="https://www.naver.com" target="self">네이버(self)</a>
+
+        <!-- form 태그 : 입력 form을 감싸고 있는 태그 -->
+        <form>
+            <input type="button" value="버튼" />
+            <input type="text" placeholder="text" />
+            <input type="password" placeholder="pw" />
+            <!-- checkbox : 여러개 선택 가능 
+            name : 체크박스들을 묶어준다 (식별값)
+            value : 실제로 체크박스 값을 가져올 때 나타나는 값
+            -->
+
+            <input type="checkbox" name="fruits" value="apple" /> 사과
+            <input type="checkbox" name="fruits" value="banana" /> 바나나
+            <!-- radio : 하나만 선택 가능 
+            name, value : checkbox와 기능 동일
+            -->
+            <input type="radio" name="gender" value="man" /> 남자
+            <input type="radio" name="gender" value="woman" /> 여자
+            <!-- date : 년, 월, 일 -->
+            <input type="date" />
+            <!-- 날짜 + 시간 -->
+            <input type="datetime-local" />
+            <!-- select -->
+            <select>
+                <optgroup label="커피">
+                    <option value="americano">아메리카노</option>
+                    <option value="cafelatte" selected>카페라떼</option>
+                    <option value="espresso">에스프레소</option>
+                </optgroup>
+                <optgroup label="티">
+                    <option value="earlgrey">얼그레이티</option>
+                    <option value="jasmin">자스민티</option>
+                </optgroup>
+            </select>
+        </form>
+        <hr />
+
+        <!-- table -->
+        <!-- rowspan : 해당 칸이 점유하는 행의 수 지정-->
+        <!-- colspan : 해당 칸이 점유하는 열의 수 지정 -->
+        <table border="1" cellspacing="0" cellpadding="5" width="300" eight="100">
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+                <th>전화번호</th>
+            </tr>
+            <tr>
+                <td>이윤진</td>
+                <td>26</td>
+                <td>010-5162-2662</td>
+            </tr>
+            <tr>
+                <td rowspan="2">홍길동</td>
+                <td colspan="2">100</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>010-3231-2332</td>
+            </tr>
+        </table>
+
+        <!-- semantic tag -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a>menu1</a></li>
+                    <li><a>menu2</a></li>
+                    <li><a>menu3</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>경제</h2>
+                <article></article>
+                <article></article>
+                <article></article>
+            </section>
+        </main>
     </body>
 </html>
