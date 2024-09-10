@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>z-index</title>
+        <style>
+            .parent {
+                position: relative;
+                width: 300px;
+                border: 3px dotted dodgerblue;
+            }
+
+            .circle {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                position: absolute;
+            }
+
+            .circle1 {
+                background-color: #9dc8c8;
+                top: 0;
+                left: 200px;
+                z-index: 0;
+            }
+            .circle2 {
+                background-color: #58c9b9;
+                top: 0;
+                left: 150px;
+                z-index: 1;
+            }
+            .circle3 {
+                background-color: #519d9e;
+                top: 0;
+                left: 100px;
+                z-index: 2;
+            }
+            .circle4 {
+                background-color: #d7fff1;
+                top: 0;
+                left: 50px;
+                z-index: 1;
+            }
+            .circle5 {
+                background-color: #8cd790;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>z-index</h2>
+        <div class="parent">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+            <div class="circle circle4"></div>
+            <div class="circle circle5"></div>
+        </div>
+    </body>
+</html>
