@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform 실습</title>
+    <link rel="stylesheet" href="examtransform.css" />
+    <style>
+      img {
+        width: 500px;
+        height: 500px;
+      }
+      .main {
+        position: relative;
+      }
+      .image {
+        position: absolute;
+        transform: skewY(30deg);
+      }
+      .img1 {
+        top: 300px;
+        left: 100px;
+        z-index: 3;
+      }
+      .img2 {
+        top: 300px;
+        left: 450px;
+        z-index: 2;
+      }
+      .img3 {
+        top: 300px;
+        left: 800px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="image img1">
+        <img
+          src="https://as2.ftcdn.net/v2/jpg/02/34/86/01/1000_F_234860197_CH2F23rU2F7nbJ0Ng38k7MKvDhccHpnJ.jpg"
+          alt="가을"
+        />
+      </div>
+      <div class="image img2">
+        <img
+          src="https://png.pngtree.com/thumb_back/fw800/background/20230614/pngtree-tree-on-the-green-field-wallpaper-128x256-hd-1920x1080-desktop-hd-image_2929884.jpg"
+          alt="숲"
+        />
+      </div>
+      <div class="image img3">
+        <img
+          src="https://cdn.pixabay.com/photo/2023/02/15/07/20/easter-7791108_960_720.jpg"
+          alt="부활절"
+        />
+      </div>
+    </div>
+  </body>
+</html>

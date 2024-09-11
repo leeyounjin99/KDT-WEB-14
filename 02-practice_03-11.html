@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-wrap2</title>
+    <style>
+      .container div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+      }
+
+      .container {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        background-color: orange;
+        /* flex-direction: column; */
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* align-items: center; */
+        align-content: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>item1</div>
+      <div>item2</div>
+      <div>item3</div>
+      <div>item4</div>
+      <div>item5</div>
+      <div>item6</div>
+      <div>item7</div>
+      <div>item8</div>
+    </div>
+  </body>
+</html>
