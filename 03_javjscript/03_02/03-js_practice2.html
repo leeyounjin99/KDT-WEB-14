@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>함수 만들기1</title>
+    <title>함수 만들기2</title>
     <script>
-      function multifly(num1, num2) {
-        return num1 * num2;
-      }
+      let square = function (num) {
+        console.log(num * num);
+      };
 
-      console.log(multifly(3, 7)); // 21
-      console.log(multifly(2, 2)); // 4
+      square(4); // 16
+      square(11); //121
+      square(5); //25
     </script>
   </head>
   <body></body>

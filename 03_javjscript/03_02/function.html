@@ -31,18 +31,34 @@
       };
       sayHello3();
 
-      // 매개변수가 있는 경우
-      function hello(name) {
+      let grade = 3; // 전역 변수
+
+      // 매개변수가 있는 경우 (파라미터, 인자)
+      function hello(name, grade) {
         console.log(`안녕 내 이름은 ${name}이야`);
 
-        let age = 10;
-        return age;
+        let age = 10; // 함수 hello 안에다가 선언한 변수 age , 지역 변수
+        console.log("hello 함수 안에서 age", age);
+
+        // let name = "안녕"; // error: 매개변수에서 사용한 이름
+        console.log("함수 안 grade:", grade); // 매개변수로 선언한 값이 출력
+
+        return age; // age 값 반환 , 함수 끝남
+
+        console.log("안녕"); // 실행 안됨
       }
 
-      hello("길동");
+      hello("길동", 5);
       // console.log(age); // error
-      let age = hello("길동");
+      let age = hello("길동", 5);
       console.log(age);
+
+      console.log("함수 밖 grade:", grade);
+
+      // 매개변수 여러개
+      function test(num1, num2) {
+        return 0;
+      }
     </script>
   </head>
   <body></body>
