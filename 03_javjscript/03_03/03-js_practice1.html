@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열과 반복문 실습</title>
+    <script>
+      const arr1 = [];
+      let sum1 = 0;
+      let sum2 = 0;
+      let sum3 = 0;
+
+      for (let num1 = 1; num1 <= 100; num1++) {
+        arr1.push(num1);
+      }
+      console.log(arr1);
+
+      for (let i = 0; i < arr1.length; i++) {
+        sum1 += arr1[i];
+      }
+      console.log(sum1);
+
+      for (let number of arr1) {
+        sum2 += number;
+      }
+
+      arr1.forEach((number) => {
+        sum3 += number;
+      });
+      console.log(sum3);
+
+      arr1.forEach((number) => (sum1 += number));
+      console.log(sum3);
+    </script>
+  </head>
+  <body></body>
+</html>
