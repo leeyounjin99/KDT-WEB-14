@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post 요청 폼 결과 확인하기</title>
+  </head>
+  <body>
+    <h1>폼 결과 확인하기</h1>
+
+    <div><span> <%= userInfo.username %></span>님 환영합니다!</div>
+    <div>성별은 <span> <%= userInfo.gender %> </span></div>
+
+    <div>
+      생일 : <%= userInfo.birthYear %>년 <%= userInfo.birthMonth %>월 <%=
+      userInfo.birthDay %>일
+    </div>
+    <div>취미 : <%= userInfo.hobby %></div>
+
+    <% if (userInfo.mycolor) { %>
+    <div>좋아하는 색상: <%= userInfo.myColor %></div>
+    <input type="color" value="<%= userInfo.myColor %>" />
+    <% } %> <% if (userInfo.myNumber) { %>
+    <div>좋아하는 숫자: <%= userInfo.myNumber %></div>
+    <% } %>
+  </body>
+</html>
