@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Get 폼 실습</h1>
+
+    <form name="register">
+      <label for="username">이름</label>
+      <input type="text" name="username" id="username" />
+      <br />
+
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" id="male" value="남자" />
+        <label for="male">남자</label>
+        <input type="radio" name="gender" id="female" value="여자" />
+        <label for="female">여자</label>
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="birthYear" id="year">
+          <% for( let i = 0; i < 30; i++ ) { %>
+          <option value="<%= 2010 - i %>"><%= 2010 - i %></option>
+          <% } %>
+        </select>
+        년
+        <select name="birthMonth" id="month">
+          <% for( let i = 1; i <= 12; i++ ) { %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        월
+        <select name="birthDay" id="day">
+          <% for( let i = 1; i <= 31; i++ ) { %>
+          <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+        일
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" name="hobby" value="여행" />여행
+        <input type="checkbox" name="hobby" value="패션" />패션
+        <input type="checkbox" name="hobby" value="음식" />음식
+      </fieldset>
+      <br />
+      <button type="button" onclick="clickRegister()">회원가입</button>
+    </form>
+
+    <script>
+      function clickRegister() {
+        const form = document.forms["register"];
+        console.log(form.hobby.value); // 출력 X
+
+        // case 1. filter, map 반복문 사용
+        // Array.from(arrayLike) : 유사 배열 객체를 배열로 변환해준다
+        // const hobbies = Array.from(form.hobby)
+        //   .filter((element) => element.checked == true)
+        //   .map((element) => element.value);
+        // console.log(hobbies);
+
+        // NodeList의 메소드 forEach 사용
+        // case 2. forEach 반복문 사용
+        const hobbies = [];
+        form.hobby.forEach((element) => {
+          if (element.checked) {
+            hobbies.push(element.value);
+          }
+        });
+        console.log(hobbies);
+      }
+    </script>
+  </body>
+</html>
