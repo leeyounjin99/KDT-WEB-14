@@ -14,7 +14,7 @@ const userInfo = {
 };
 
 app.get("/", (req, res) => {
-  res.render("practice2");
+  res.render("prantice1");
 });
 
 // ajax get
@@ -53,26 +53,22 @@ app.get("/fetch", (req, res) => {
   res.send(req.body);
 });
 
-// axios get 실습
-app.get("/axios", (req, res) => {
+// 실습
+app.get("/practice1", (req, res) => {
+  res.render("practice1");
+});
+
+app.get("/practice1-get", (req, res) => {
   console.log(req.query);
-  res.send(req.query);
+  console.log(req.params);
+  res.json(req.query);
 });
 
-app.listen(PORT, () => {
-  console.log(`port is opening on ${PORT}`);
-});
-
-// 로그인 실습
-const validId = "user";
-const validPw = "1234";
-
-app.post("/login", (req, res) => {
-  const { id, password } = req.body;
-
-  if (id === validId && password === validPw) {
-    return res.json({ success: true });
+app.post("/practice2", (req, res) => {
+  console.log(req.body);
+  if (userInfo.id === req.body.userId && userInfo.pw === req.body.userPw) {
+    res.json({ userInfo: req.body, isSuccess: true });
   } else {
-    return res.json({ success: false });
+    res.json({ isSuccess: false });
   }
 });
