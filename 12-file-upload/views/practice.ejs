@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일 업로드 실습</title>
+  </head>
+  <body>
+    <form action="/upload/prac" method="post" enctype="multipart/form-data">
+      <input type="text" name="id" placeholder="아이디" />
+      <br />
+      <input type="password" name="pw" id="pw" placeholder="비밀번호" />
+      <br />
+      <input type="text" name="name" placeholder="이름" />
+      <br />
+      <input type="text" name="age" placeholder="나이" />
+      <br />
+      <input type="file" name="userfile" /><br /><br />
+      <button>업로드</button>
+    </form>
+  </body>
+</html>
