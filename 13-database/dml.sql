@@ -122,6 +122,47 @@ select sum(amount) as 'total_amount' from orders;
 select sum(amount) as 'total_amount', avg(amount) 'avg_amount',
 min(price) as 'min_price', max(price) as 'max_price' from orders;
 
+-- 주문 테이블에서 총 주문 건수
+select count(*) from orders;
+
+-- 주문 테이블에서 주문한 고객 수 (중복 없이)
+select count(distinct custid) from orders;
+
+-- < GROUP BY >
+-- "~별로"
+
+-- 고객별로 주문한 주문 건수 구하기
+select custid, count(*) from orders group by custid;
+
+-- 고객별로 주문한 상품 총 수량 구하기
+select custid, sum(amount) from orders group by custid;
+
+-- 고객별로 주문한 총 주문액 구하기
+select custid, sum(amount * price) from orders group by custid;
+
+-- 상품별로 판매 개수 구하기
+select prodname, sum(amount) from orders group by prodname; 
+
+-- < HAVING >
+-- group by 절 이후 추가 조건
+-- 그룹에 대해서 필터링
+
+-- 총 주문액이 10000원 이상인 고객에 대해서 고객별로 주문한 상품 총 수량 구하기
+select custid, sum(amount), sum(amount * price) from orders
+group by custid
+having sum(amount * price) >= 10000;
+
+-- 총 주문액이 10000원 이상인 고객에 대해서 고객별로 주문한 상품 총 수량 구하기
+-- (단, custid가 'bunny'인 고객은 제외하고 출력할 것)
+-- where, group by, having 모두 사용한 예시
+select custid, sum(amount), sum(amount * price) from orders
+where custid != 'bunny'
+group by custid
+having sum(amount * price) >= 10000;
+
+-- group by 주의 사항
+-- select 절에서 group by 에서 사용한 속성과 집계함수만 사용 가능
+
 -----------------------------------------------
 
 -- 외래키 제약 조건
