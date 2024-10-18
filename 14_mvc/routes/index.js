@@ -12,9 +12,9 @@ const router = express.Router();
 // [After]
 // => Controller 사용으로 변경
 // 경로를 controller와 연결지어 사용 가능
-router.get("/", controller.main);
-router.get("/comments", controller.comments);
-router.get("/comment/:id", controller.comment);
+// router.get("/", controller.main);
+// router.get("/comments", controller.comments);
+// router.get("/comment/:id", controller.comment);
 
 // GET /comment/:id
 // 라우터 주소에 매개변수 기능 존재함
