@@ -11,7 +11,21 @@ const sequelize = new Sequelize(
 
 // TODO: 모델 모듈 불러오기
 const Player = require("./Player")(sequelize, Sequelize.DataTypes);
-const Profile = require("./Profile")(sequelize, Sequelize);
+const Profile = require("./Profile")(sequelize, Sequelize.DataTypes);
+
+// TODO: 관계 형성
+
+// 1) Player : Profile = 1:1
+Player.hasOne(Profile, {
+  foreignKey: "player_id",
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
+});
+Profile.belongsTo(Player, { foreignKey: "player_id" });
+
+// TODO: 관계 정의한 모델들을 db 객체에 저장
+db.Player = Player;
+db.Profile = Profile;
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
