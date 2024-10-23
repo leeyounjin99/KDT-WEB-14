@@ -13,6 +13,8 @@ const sequelize = new Sequelize(
 const Player = require("./Player")(sequelize, Sequelize.DataTypes);
 const Profile = require("./Profile")(sequelize, Sequelize.DataTypes);
 const Team = require("./Team")(sequelize, Sequelize.DataTypes);
+const Game = require("./Game")(sequelize, Sequelize.DataTypes);
+const GameTeam = require("./GameTeam")(sequelize, Sequelize.DataTypes);
 
 // TODO: 관계 형성
 
@@ -29,10 +31,19 @@ Profile.belongsTo(Player, { foreignKey: "player_id" });
 Team.hasMany(Player, { foreignKey: "team_id" });
 Player.belongsTo(Team, { foreignKey: "team_id" });
 
+// 3) N:M 관계의 경우 새로운 모델이 생성된다
+Game.belongsToMany(Team, {
+  through: "GameTeam",
+  foreignKey: "team_id",
+});
+Team.belongsToMany(Game, { through: "GameTeam", foreignKey: "game_id" });
+
 // TODO: 관계 정의한 모델들을 db 객체에 저장
 db.Player = Player;
 db.Profile = Profile;
 db.Team = Team;
+db.Game = Game;
+db.GameTeam = GameTeam;
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
